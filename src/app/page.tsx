@@ -1,10 +1,21 @@
-import Image from "next/image";
-import MyMap from "../components/map";
+import Image from 'next/image';
+import MyMap from './components/map';
+import SelectYear from './components/select_year';
+import { fetchData } from './services/api';
 
-export default function Home() {
+type fetchYearsResponse = {
+	years: number[];
+};
+
+export default async function Home() {
+	const yearsData: fetchYearsResponse = await fetchData<fetchYearsResponse>('http://localhost:8000/crimes/all_years');
 	const renderMap = () => {
 		return <MyMap />
 	};
+	const selectList = () => {
+		return <SelectYear years={yearsData.years.sort()} />
+	};
+
 	return (
 		<div className="flex flex-col h-screen gap-5 font-[family-name:var(--font-geist-mono)]">
 			<header className="bg-gray-800 text-white p-4 text-center">
@@ -17,8 +28,10 @@ export default function Home() {
 					</ul>
 				</nav>
 			</header>
-
-			<div className="flex-1 sm:px-5">
+			<div className="flex">
+				{selectList()}
+			</div>
+			<div className="flex-1 sm:px-10">
 				{renderMap()}
 			</div>
 			<footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">

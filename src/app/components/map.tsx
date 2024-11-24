@@ -1,5 +1,5 @@
-"use client";
-import { Map } from 'pigeon-maps'
+'use client';
+import { Map, ZoomControl } from 'pigeon-maps'
 import { maptiler } from 'pigeon-maps/providers'
 
 const maptilerProvider = maptiler('captR7Gr1UNOIhWTwXle', 'streets');
@@ -13,6 +13,8 @@ export default function MyMap() {
 			defaultCenter={vancouverCenter}
 			defaultZoom={12}
 			animate={true}
-		/>
+		>
+			<ZoomControl />
+		</Map>
 	);
 }
