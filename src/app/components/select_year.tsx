@@ -6,7 +6,7 @@ type SelectYearProps = {
 }
 
 const SelectYear = ({ years }: SelectYearProps) => {
-	const [selectedOption, setSelectedOption] = useState<string | undefined>();
+	const [selectedOption, setSelectedOption] = useState<string | undefined>('2024');
 	const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
 		setSelectedOption(event.target.value);
 	};

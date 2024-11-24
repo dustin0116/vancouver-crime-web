@@ -13,7 +13,7 @@ export default async function Home() {
 		return <MyMap />
 	};
 	const selectList = () => {
-		return <SelectYear years={yearsData.years.sort()} />
+		return <SelectYear years={yearsData.years.sort((a, b) => b - a)} />
 	};
 
 	return (
