@@ -11,7 +11,7 @@ export default function MyMap() {
 			provider={maptilerProvider}
 			dprs={[1, 2]} // this provider supports HiDPI tiles
 			defaultCenter={vancouverCenter}
-			defaultZoom={11}
+			defaultZoom={12}
 			animate={true}
 		/>
 	);
