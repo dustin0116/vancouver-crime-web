@@ -6,9 +6,9 @@ type SelectYearProps = {
 }
 
 const SelectYear = ({ years }: SelectYearProps) => {
-	const [selectedOption, setSelectedOption] = useState<string | undefined>('2024');
+	const [selectedYear, setSelectedYear] = useState<number>(2024);
 	const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-		setSelectedOption(event.target.value);
+		setSelectedYear(Number(event.target.value));
 	};
 	return (
 		<div className="flex flex-col space-y-2 p-4 w-80 mx-auto">
@@ -17,7 +17,7 @@ const SelectYear = ({ years }: SelectYearProps) => {
 			</label>
 			<select
 				id="select"
-				value={selectedOption}
+				value={selectedYear}
 				onChange={handleChange}
 				className="block w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
 			>
@@ -30,9 +30,6 @@ const SelectYear = ({ years }: SelectYearProps) => {
 					</option>
 				))}
 			</select>
-			{selectedOption && (
-				<p className="text-gray-600 mt-2">You selected: {selectedOption}</p>
-			)}
 		</div>
 	)
 }
