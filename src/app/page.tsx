@@ -8,7 +8,7 @@ type fetchYearsResponse = {
 };
 
 export default async function Home() {
-	const yearsData: fetchYearsResponse = await fetchData<fetchYearsResponse>('http://localhost:8000/crimes/all_years');
+	const yearsData: fetchYearsResponse = await fetchData<fetchYearsResponse>('http://localhost:8000/years');
 	const renderMap = () => {
 		return <MyMap />
 	};
