@@ -22,7 +22,7 @@ const SelectYear = ({ years }: SelectYearProps) => {
 				className="block w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
 			>
 				<option value="" disabled>
-					Select an option
+					Years
 				</option>
 				{years.map((year: number, index: number) => (
 					<option key={index} value={year}>

@@ -31,7 +31,7 @@ export default async function Home() {
 			<div className="flex">
 				{selectList()}
 			</div>
-			<div className="flex-1 sm:px-10">
+			<div className="flex-1 px-10">
 				{renderMap()}
 			</div>
 			<footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
