@@ -4,6 +4,7 @@ import { Map, ZoomControl, Overlay } from 'pigeon-maps'
 import { maptiler } from 'pigeon-maps/providers'
 import { fetchData } from '../services/api'
 
+// TODO: Use Proxy API Route to request API Key
 const maptilerProvider = maptiler(process.env.NEXT_PUBLIC_MAPTILER_API_KEY as string, 'streets');
 const vancouverCenter: [number, number] = [49.24669, -123.12092]; // Latitude and longitude of South Cambie (Center of Vancouver)
 
